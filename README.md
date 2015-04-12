@@ -15,3 +15,5 @@
 
 #程序采用
 Django 1.7 + Pyhon 2.7.9
+
+开发环境为：linux mint && mac 10.8
