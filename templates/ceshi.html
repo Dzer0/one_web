@@ -1,0 +1,6 @@
+ <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/reg/">
+        {% csrf_token %}
+
+            {{ m.username }}
+            {{ m.password }}
+        </form>

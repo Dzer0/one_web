@@ -1,0 +1,9 @@
+
+<form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/login/">
+            {% csrf_token %}
+
+                {{ m.username }}
+                {{ m.password }}
+                {{ tz }}
+        <input type="submit" value="登陆" />
+</form>

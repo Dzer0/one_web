@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+    {% block title %}
+        {% for x in web %}
+            {{ x.webtitle }}
+        {% endfor %}
+    {% endblock %}
+
+    {% block column %}
+        {% for l in lanmu %}
+            <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+        {% endfor %}
+    {% endblock %}
+
+    {% block context %}
+        {% if not sessusername %}
+        <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/login/">
+            {% csrf_token %}
+
+                {{ m.username }}
+                {{ m.password }}
+
+        <input type="submit" value="登陆" />
+        </form>
+        {% else %}
+            你好，<a href="/User/{{ sessusername }}"> {{ sessusername }} </a> <a href="/logout/">登出</a>
+            <hr>
+            {% for list in list_comment %}
+                {{ list.context }}<br>
+                {{ list.com_user }}<br>
+                {{ list.date }}<br>
+                {{ list.article_id }}<br>
+                <a href="/User/del/{{ list.id }}">删除</a>
+                <hr>
+            {% endfor %}
+        {% endif %}
+         </div>
+    {% endblock %}

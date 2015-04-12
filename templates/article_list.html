@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+    {% block title %}
+        {% for x in web %}
+            {{ x.webtitle }}
+        {% endfor %}
+    {% endblock %}
+
+    {% block column %}
+        {% for l in lanmu %}
+            <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+        {% endfor %}
+    {% endblock %}
+
+    {% block context %}
+                  <h3 class="page-header">{{ article_user }}的文章列表</h3>
+                  <div class="row placeholders">
+            {% if list %}
+                {% for m in list %}
+                    <a href="/Article/{{ m.id }}">{{ m.title }}</a><hr>
+                {% endfor %}
+            {% endif %}
+         </div>
+    {% endblock %}
