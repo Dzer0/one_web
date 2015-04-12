@@ -215,3 +215,8 @@ def article_list(req,article_user):         #用户文章列表
     userid = models.Members.objects.get(username = article_user)
     list = models.Article.objects.filter(author = userid)
     return render_to_response('article_list.html',locals(),context_instance=RequestContext(req))
+
+#读书列表
+def Book_list(req):
+    book_list = models.Books.objects.all()
+    return render_to_response('book_list.html',locals())

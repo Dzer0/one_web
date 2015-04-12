@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^login/$',login_User),
     url(r'^comment/(\d+)/$',comment_ly),
     url(r'^User/del/(\d+)/$',del_comments),
+    url(r'^Book_list/',Book_list),
     
 
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

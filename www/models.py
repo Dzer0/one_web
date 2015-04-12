@@ -67,9 +67,9 @@ class Comments(models.Model):
 #在读书籍
 class Books(models.Model):
     book_name = models.CharField(max_length=150)
-    book_img = models.ImageField(upload_to='media/book_img')
-    book_img_thumb = models.FilePathField(path = 'media/book_img/thumb')
-    book_describe = models.RichTextField('书的描述')
+    book_author = models.CharField(max_length=50)
+    book_img = models.CharField(max_length=150)
+    book_describe = RichTextField('书的描述')
     book_source = models.URLField()
     book_support = models.CharField(max_length=20)
     book_static = models.TextField(max_length=150)

@@ -1,0 +1,14 @@
+{% for book in book_list %}
+ 	书名：{{book.book_name}}<hr>
+ 	作者：{{book.book_author}}<hr>
+ 	<img src ="{{book.book_img}}" alt="{{book.book_name}}"><hr>
+ 	观后感：{{book.book_describe |safe}}<hr>
+ 	来源：{{book.book_source}}<hr>
+ 	推荐指数：{{book.book_support}}<hr>
+ 	是否已读：
+ 		{%if not book.book_static %}
+ 			已读<hr>
+ 		{%else if%}
+ 			在读<hr>
+ 		{%end if%}
+{% endfor %}
