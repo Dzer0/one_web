@@ -55,7 +55,7 @@ def cate(req,cate_id):
     list = models.Article.objects.filter(column__id=cate_id)
     lanmutitle =models.Column.objects.filter(id=cate_id)
     #cate_list =models.Article.objects.all()
-    return render_to_response('list.html',locals())
+    return render_to_response('list.html',locals(),context_instance=RequestContext(req))
 
 #文章显示
 def article(req,art_id):

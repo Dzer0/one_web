@@ -6,9 +6,9 @@
  	来源：{{book.book_source}}<hr>
  	推荐指数：{{book.book_support}}<hr>
  	是否已读：
- 		{%if not book.book_static %}
+ 		{%if book.book_static %}
  			已读<hr>
- 		{%else if%}
- 			在读<hr>
- 		{%end if%}
+ 		{% else %}
+ 			未读<hr>
+ 		{%endif%}
 {% endfor %}

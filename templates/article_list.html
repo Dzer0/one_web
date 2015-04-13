@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load pagination_tags %}
     {% block title %}
         {% for x in web %}
             {{ x.webtitle }}
@@ -14,10 +15,13 @@
     {% block context %}
                   <h3 class="page-header">{{ article_user }}的文章列表</h3>
                   <div class="row placeholders">
+            {% autopaginate list 3 %}
             {% if list %}
+                
                 {% for m in list %}
                     <a href="/Article/{{ m.id }}">{{ m.title }}</a><hr>
                 {% endfor %}
             {% endif %}
+            {% paginate %}
          </div>
     {% endblock %}
