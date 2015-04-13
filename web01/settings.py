@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'pagination.middleware.PaginationMiddleware',
+    'pagination.middleware.PaginationMiddleware',   #引入分页插件
 
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -62,7 +62,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "django.core.context_processors.request",
+    "django.core.context_processors.request",           #1.6以后上面几个都是自带的主要添加了这条 实现分页功能
     )
 
 
@@ -104,15 +104,12 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,  'statics'),
+    os.path.join(BASE_DIR,  'static'),
 )
 
 
-
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 MEDIA_URL = '/'
-MEDIA_ROOT='media'
-CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'img')
+CKEDITOR_UPLOAD_PATH = "static/uploads/"
+
 
 

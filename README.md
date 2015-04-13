@@ -16,8 +16,19 @@
 
 添加列表分页  已完成
 
+重新修改了富文本上传问题，删除了一些代码
+
+纠结 这个问题没有得到很好的解决以后还需要跟紧继续解决这个问题。
+
+现在是通过STATIC_URL与STATIC_ROOT来暂时解决富文本上传问题。
+
+另外 前端模板暂时未找到合适的考虑用Bootstrap自己来写个。
+
 
 #程序采用
-Django 1.7 + Pyhon 2.7.9
 
-开发环境为：linux mint && mac 10.8
+开发系统：Django 1.7 + Pyhon 2.7.9
+
+开发环境：linux mint && mac 10.8  
+
+开发工具：Sublime Text 3

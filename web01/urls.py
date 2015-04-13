@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from www.views import *
 from django.conf import settings  # 引用settings配置文件 为配置富文本需要
-from django.conf.urls.static import static     #引用配置文件 为配置富文本需要
+
 
 
 urlpatterns = patterns('',
@@ -28,8 +28,6 @@ urlpatterns = patterns('',
     url(r'^login/$',login_User),
     url(r'^comment/(\d+)/$',comment_ly),
     url(r'^User/del/(\d+)/$',del_comments),
-    url(r'^Book_list/',Book_list),
-    
+    url(r'^Book_list/',Book_list),   
 
-)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
-   #在上面引用配置文件后通过static引用settings.py中MEDIA_URL 和MEDIA_ROOT配置
+)
