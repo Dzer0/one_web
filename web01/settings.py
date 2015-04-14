@@ -111,5 +111,7 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/'
 CKEDITOR_UPLOAD_PATH = "static/uploads/"
 
-
-
+#设置session 过期时间
+SESSION_COOKIE_AGE=60*30 #30 min
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  #关闭浏览器session失效
+SESSION_SAVE_EVERY_REQUEST = True      #需设置这个才能生效 url:http://django-china.cn/topic/500/   

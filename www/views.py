@@ -59,7 +59,9 @@ def cate(req,cate_id):
 
 #文章显示
 def article(req,art_id):
-    sessusername = req.session['username']
+    sessusername = req.session.get('username','')
+
+#    sessusername = req.session['username']
     web = models.WebIntroduction.objects.all()
     lanmu = models.Column.objects.all()
     context = models.Article.objects.filter(id=art_id)
@@ -68,12 +70,12 @@ def article(req,art_id):
         m =loginUser()
     else:
         pl =Commnets_form()
-
     return render_to_response('article.html',locals(),context_instance=RequestContext(req))
+
 
 #用户中心
 def  User(req):
-    sessusername = req.session['username']
+    sessusername = req.session.get('username','')
     if sessusername =='':
          return HttpResponse('<script>alert("您未登陆，单击跳转到登陆页面");top.location="/login/";</script>')
     else:
