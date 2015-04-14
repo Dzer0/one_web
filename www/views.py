@@ -220,5 +220,7 @@ def article_list(req,article_user):         #用户文章列表
 
 #读书列表
 def Book_list(req):
+    lanmu = models.Column.objects.all()
+    web = models.WebIntroduction.objects.all()
     book_list = models.Books.objects.all()
     return render_to_response('book_list.html',locals())
