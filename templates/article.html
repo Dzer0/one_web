@@ -1,57 +1,147 @@
 {% extends 'base.html' %}
-    {% block title %}
-        {% for x in web %}
-            {{ x.webtitle }}
-        {% endfor %}
-    {% endblock %}
+{% load pagination_tags %}
 
-    {% block column %}
-        {% for l in lanmu %}
-            <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
-        {% endfor %}
-    {% endblock %}
+<!--网站标题-->
+{% block title %}
+    {% for x in web %}
+        {{ x.webtitle }}
+    {% endfor %}
+{% endblock %}
 
-    {% block context %}
-        {% if context %}
-            {% for cont in context %}
-                  <!--<h1 class="page-header">
+<!--banner 栏目-->
+{% block column %}
+    {% for l in lanmu %}
+        <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+    {% endfor %}
+{% endblock %}
 
-                {{cont.colum}}待解决
+<!--侧边栏目-->
+{% block lanmus %}
+    {% for l in lanmu %}
+		<li><a href="/category/{{ l.id }}">{{ l.name }}<span class="color">(5)</span></a></li>
+	{% endfor %}
+{% endblock %}
 
-                  </h1>
--->
-                  <div class="row placeholders">
-                {{ cont.title }}<hr>
-                <a href ='/list/{{ cont.author }}'>{{ cont.author }}</a><hr>
-                {{ cont.context |safe }}<hr>
-                {{ cont.date }}<hr>
+<!--位置条-->
+{% block weizhi %}
+    {% for title in wenzhanglanmu %}
+            / <a href="/category/{{ title.id }}">{{ title.name }}</a>
+    {% endfor %}
+	<!--/ <a href="#">Page</a> / <a href="#">Sub Page</a>-->
+{% endblock%}
 
-                ============================================================
-                <p>
-                {% for com in comments %}
-                    {{ com.context }}|
-                    {{ com.date }}|{{ com.com_user }}<br>
-                {% endfor %}
-                <hr>
-                评论：
-                {% if sessusername %}
-                     <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/comment/{{ cont.id }}/">
-                        {% csrf_token %}
-                        {{ pl.context }}
-                     <input type="submit" value="提交评论" />
-                    </form>
-                {% else %}
-                    <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/login/">
-                        {% csrf_token %}
+<!--内容-->
+{% block context %}
+	{% if context %}
+    
+ <div class="blog-two-item">
+	<!-- blog two Content -->
+	<div class="blog-two-content">
+	<!-- Heading -->
+			<h3><a href="/Article/{{context.id}}">{{ context.title }}</a></h3>
+	<!-- Blog meta -->
+			<div class="blog-meta">
+	<!-- Date -->
+			<i class="fa fa-calendar"></i> &nbsp; {{ context.date }} &nbsp; 
+	<!-- Author -->
+			<a href ='/list/{{ context.author }}'><i class="fa fa-user"></i> &nbsp; {{ context.author }}</a></a> &nbsp;
+	<!-- Comments -->
+			<a href="#"><i class="fa fa-comments"></i> &nbsp; {{num_comments}} Comments</a>
+		</div>	
+										
+ 	<!-- Paragraph -->
+		<p>{{ context.context |safe }}</p>
+	</div>
+ </div>
 
-                          {{ m.username }}
-                          {{ m.password }}
-                     <input type="submit" value="登陆" />
-                    </form>
 
-                {% endif %}
-                </p>
-            {% endfor %}
-        {% endif %}
-         </div>
-    {% endblock %}
+ <!--分享文章按钮-->
+ <div class="well">
+	<span class="bold">Sharing is Sexy: </span>  &nbsp; &nbsp;
+	<span class="brand-bg">
+		<a href="#" class="facebook"><i class="fa fa-facebook square-2 rounded-1"></i></a>
+		<a href="#" class="twitter"><i class="fa fa-twitter square-2 rounded-1"></i></a>
+		<a href="#" class="google-plus"><i class="fa fa-google-plus square-2 rounded-1"></i></a>
+		<a href="#" class="linkedin"><i class="fa fa-linkedin square-2 rounded-1"></i></a>
+		<a href="#" class="pinterest"><i class="fa fa-pinterest square-2 rounded-1"></i></a>
+	</span>
+ </div>
+	{%endif%}
+{% endblock %}
+
+<!--评论-->
+{% block pinglun %}
+	<!--优质评论-->
+	<div class="blog-author well">
+									<!-- Author image -->
+									<div class="blog-author-img">
+										<a href="#"><img src="static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/img/user/1.jpg" alt="" class="img-responsive img-thumbnail"></a>
+									</div>
+									<!-- Author details -->
+									<div class="blog-author-content">
+										<h5><a href="#">Ashok Ramesh <small>Madurai</small></a></h5>
+										<p>Temporibus autem quibusdam et aut officiis debitis aut  molestiae non recusandae rerum hic tenetur rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae rerum hic tenetur.</p>
+									</div>
+									<div class="clearfix"></div>
+	</div>
+	<!--评论列表-->
+
+	<div class="blog-comments">
+			<h4><i class="fa fa-comments color"></i>&nbsp; {{num_comments}} Comments</h4>
+
+			<hr>
+	{% for com in comments %}
+									<!-- Blog comment item -->
+			<div class="blog-comment-item">
+				<div class="comment-author-image">
+					<a href="#"><img src="static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail"></a>
+				</div>
+				<div class="comment-details">
+				<!-- Name -->
+				<h5><a href="#">{{ com.com_user }}</a> <small>{{ com.date }}</small></h5>
+				<!-- Paragraph -->
+				<p>{{ com.context }}</p>
+				</div>
+		   </div>
+	{% endfor %}
+	</div>
+{% endblock %}
+
+<!--用户提交留言-->
+{% block liuyan %}
+<div class="well">
+<!-- Heading -->
+	<h4><i class="fa fa-comments color"></i>&nbsp; Post Comment</h4><!-- Form -->
+	<hr>
+	<form class="form" role="form">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Enter Name">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Enter Email">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Enter Website">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" rows="7" placeholder="Enter Message"></textarea>
+		</div>
+		<!-- Button -->
+		<button type="button" class="btn btn-color">Submit</button>&nbsp;
+		<button type="button" class="btn btn-white">Reset</button>
+	</form>
+</div>
+<ul class="pager">
+	<li class="previous"><a href="#">← Older</a></li>
+	<li class="next"><a href="#">Newer →</a></li>
+</ul>
+
+{% endblock%}

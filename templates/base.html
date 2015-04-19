@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="zh-CN" slick-uniqueid="3">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     	<meta charset="utf-8">
   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<link rel="icon" href="/static/favicon.ico">
@@ -13,23 +15,23 @@
 		
 		<!-- Styles -->
 		<!-- Bootstrap CSS -->
-		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font awesome CSS -->
-		<link href="static/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/static/css/font-awesome.min.css" rel="stylesheet">
 		<!-- Magnific Popup -->
-		<link href="static/css/magnific-popup.css" rel="stylesheet">
+		<link href="/static/css/magnific-popup.css" rel="stylesheet">
 		<!-- Owl carousel -->
-		<link href="static/css/owl.carousel.css" rel="stylesheet">
+		<link href="/static/css/owl.carousel.css" rel="stylesheet">
 		
 		<!-- CSS for this page -->
 		
 		<!-- Base style -->
-		<link href="static/css/styles/style.css" rel="stylesheet">
+		<link href="/static/css/styles/style.css" rel="stylesheet">
 		<!-- Skin CSS -->
-		<link href="static/css/styles/skin-lblue.css" rel="stylesheet" id="color_theme">
+		<link href="/static/css/styles/skin-lblue.css" rel="stylesheet" id="color_theme">
 		
 		<!-- Custom CSS. Type your CSS code in custom.css file -->
-		<link href="static/css/custom.css" rel="stylesheet">
+		<link href="/static/css/custom.css" rel="stylesheet">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="#">
@@ -70,7 +72,7 @@
 								<li>
 									<!-- Item image -->
 									<div class="cart-img">
-									<a href="#"><img src="static/img/ecommerce/view-cart/1.png" tppabs="http://ashobiz.asia/brave18/demo/static/img/ecommerce/view-cart/1.png" alt="" class="img-responsive" /></a>
+									<a href="#"><img src="/static/img/ecommerce/view-cart/1.png" tppabs="http://ashobiz.asia/brave18/demo/static/img/ecommerce/view-cart/1.png" alt="" class="img-responsive" /></a>
 									</div>
 									<!-- Item heading and price -->
 									<div class="cart-title">
@@ -83,7 +85,7 @@
 								<!-- Item 2 -->
 								<li>
 									<div class="cart-img">
-									<a href="#"><img src="static/img/ecommerce/view-cart/2.png" tppabs="http://ashobiz.asia/brave18/demo/static/img/ecommerce/view-cart/2.png" alt="" class="img-responsive" /></a>
+									<a href="#"><img src="/static/img/ecommerce/view-cart/2.png" tppabs="http://ashobiz.asia/brave18/demo/static/img/ecommerce/view-cart/2.png" alt="" class="img-responsive" /></a>
 									</div>
 									<div class="cart-title">
 										<h5><a href="#">Samsamgun galaxy some thing about.</a></h5>
@@ -307,7 +309,7 @@
 				
 				<div class="page-heading-two">
 					<div class="container">
-						<h2>my博客 <span>一句装逼的话</span></h2>
+						<h2>my博客 <span>死亡是唯一永恒的灯塔</span></h2>
 						<div class="breads">
 							所在位置：Home
  							{% block weizhi %} {% endblock %}
@@ -329,9 +331,9 @@
 								<!-- Blog item starts -->
 								{% block context %}{% endblock %}
 								<!-- Blog item ends -->
-								<!-- Pagination -->
+								{% block pinglun %}{% endblock %}
+								{% block liuyan %}{% endblock%}
 							</div>
-							
 							<!-- Sidebar column -->
 							<div class="col-md-4">
 								<!-- Sidebar -->
@@ -361,12 +363,8 @@
 										<!-- Widgets Content -->
 										<div class="widget-content categories">
 											<ul class="list-6">
-												<li><a href="#">Web Designing <span class="color">(5)</span></a></li>
-												<li><a href="#">Graphic Design <span class="color">(5)</span></a></li>
-												<li><a href="#">PHP Dev <span class="color">(5)</span></a></li>
-												<li><a href="#">Android Dev <span class="color">(5)</span></a></li>
-												<li><a href="#">Photoshop <span class="color">(5)</span></a></li>
-												<li><a href="#">WordPress <span class="color">(5)</span></a></li>
+											{% block lanmus %}
+											{% endblock %}
 											</ul>
 										</div>
 									</div>
@@ -390,7 +388,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -399,7 +397,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Temporibus autem quibusdam et aut officiis  aut rerum</span>
 																	<div class="clearfix"></div>
@@ -408,7 +406,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Voluptates repudiandae sint et molestiae non recusand</span>
 																	<div class="clearfix"></div>
@@ -417,7 +415,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -431,7 +429,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -440,7 +438,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Temporibus autem quibusdam et aut officiis  aut rerum</span>
 																	<div class="clearfix"></div>
@@ -449,7 +447,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Voluptates repudiandae sint et molestiae non recusand</span>
 																	<div class="clearfix"></div>
@@ -458,7 +456,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -472,7 +470,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/1.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -481,7 +479,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/2.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Temporibus autem quibusdam et aut officiis  aut rerum</span>
 																	<div class="clearfix"></div>
@@ -490,7 +488,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/3.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Voluptates repudiandae sint et molestiae non recusand</span>
 																	<div class="clearfix"></div>
@@ -499,7 +497,7 @@
 															<li>
 																<a href="#">
 																	<!-- Item image -->
-																	<img src="static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
+																	<img src="/static/img/user/4.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/user/4.jpg" alt="" class="img-responsive img-thumbnail" />
 																	<!-- Item title -->
 																	<span>Neque porro quisquam estui dolorem ipsum quia dolor sit</span>
 																	<div class="clearfix"></div>
@@ -540,12 +538,12 @@
 										<h5><i class="fa fa-photo color"></i>&nbsp; Gallery</h5>
 										<!-- Widgets Content -->
 										<div class="widget-content gallery">
-											<a href="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-											<a href="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-											<a href="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-											<a href="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-											<a href="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-											<a href="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+											<a href="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
 										</div>
 									</div>									
 									
@@ -644,20 +642,20 @@
 								<div class="foot-item-content">
 									<!-- Foot Recent Image --> 
 									<div class="foot-recent-img">
-										<a href="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
 									</div>
 									<!-- Foot Recent Image --> 
 									<div class="foot-recent-img">
-										<a href="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
 									</div>
 									<div class="foot-recent-img">
-										<a href="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
-										<a href="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" class="lightbox"><img src="/static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" class="lightbox"><img src="/static/img/gallery/small/2.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+										<a href="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" class="lightbox"><img src="/static/img/gallery/small/3.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
 									</div>
 								</div>
 							</div>
@@ -719,33 +717,33 @@
 		
 		<!-- Javascript files -->
 		<!-- jQuery -->
-		<script src="static/js/jquery.js" tppabs="http://ashobiz.asia/brave18/demo/js/jquery.js"></script>
+		<script src="/static/js/jquery.js" tppabs="http://ashobiz.asia/brave18/demo/js/jquery.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="static/js/bootstrap.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/bootstrap.min.js"></script>
+		<script src="/static/js/bootstrap.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/bootstrap.min.js"></script>
 		<!-- Placeholders JS -->
-		<script src="static/js/placeholders.js" tppabs="http://ashobiz.asia/brave18/demo/js/placeholders.js"></script>
+		<script src="/static/js/placeholders.js" tppabs="http://ashobiz.asia/brave18/demo/js/placeholders.js"></script>
 		<!-- Magnific Popup -->
-		<script src="static/js/jquery.magnific-popup.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/jquery.magnific-popup.min.js"></script>	
+		<script src="/static/js/jquery.magnific-popup.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/jquery.magnific-popup.min.js"></script>	
 		<!-- Owl carousel -->
-		<script src="static/js/owl.carousel.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/owl.carousel.min.js"></script>
+		<script src="/static/js/owl.carousel.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/owl.carousel.min.js"></script>
 		<!-- Respond JS for IE8 -->
-		<script src="static/js/respond.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/respond.min.js"></script>
+		<script src="/static/js/respond.min.js" tppabs="http://ashobiz.asia/brave18/demo/js/respond.min.js"></script>
 		<!-- HTML5 Support for IE -->
-		<script src="static/js/html5shiv.js" tppabs="http://ashobiz.asia/brave18/demo/js/html5shiv.js"></script>
+		<script src="/static/js/html5shiv.js" tppabs="http://ashobiz.asia/brave18/demo/js/html5shiv.js"></script>
 		<!-- Main JS -->
-		<script src="static/js/main.js" tppabs="http://ashobiz.asia/brave18/demo/js/main.js"></script>
+		<script src="/static/js/main.js" tppabs="http://ashobiz.asia/brave18/demo/js/main.js"></script>
 		
 		<!-- Javascript for this page -->
 		
 		<!-- Custom JS. Type your JS code in custom.js file -->
-		<script src="static/js/custom.js" tppabs="http://ashobiz.asia/brave18/demo/js/custom.js"></script>
+		<script src="/static/js/custom.js" tppabs="http://ashobiz.asia/brave18/demo/js/custom.js"></script>
 		
 		<!-- 
 		Style switcher. This is just for demo purpose only. 
 		If you don't want remove the below line.
 		Some of the features of style switcher won't work on offline. THey only work when you upload it to server 
 		-->
-		<script src="static/style-switcher/style-switcher.js" tppabs="http://ashobiz.asia/brave18/demo/style-switcher/style-switcher.js"></script>
+		<script src="/static/style-switcher/style-switcher.js" tppabs="http://ashobiz.asia/brave18/demo/style-switcher/style-switcher.js"></script>
 		
 	</body>	
 </html>

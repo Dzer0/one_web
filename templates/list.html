@@ -1,29 +1,68 @@
 {% extends 'base.html' %}
 {% load pagination_tags %}
-    {% block title %}
-        {% for x in web %}
-            {{ x.webtitle }}
-        {% endfor %}
-    {% endblock %}
 
-    {% block column %}
-        {% for l in lanmu %}
-            <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
-        {% endfor %}
-    {% endblock %}
+<!--网站标题-->
+{% block title %}
+    {% for x in web %}
+        {{ x.webtitle }}
+    {% endfor %}
+{% endblock %}
 
-    {% block context %}
+<!--banner 栏目-->
+{% block column %}
+    {% for l in lanmu %}
+        <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+    {% endfor %}
+{% endblock %}
 
-                    {% for a in lanmutitle %}
-                  <h1 class="page-header">{{ a.name }}</h1>
-                    {% endfor %}
-                  <div class="row placeholders">
-            {% autopaginate list 3 %}
-            {% if list %}
-                {% for m in list %}
-                    <a href="/Article/{{ m.id }}">{{ m.title }}</a><hr>
-                {% endfor %}
-            {% endif %}
-            {% paginate %}
-         </div>
-    {% endblock %}
+<!--侧边栏目-->
+{% block lanmus %}
+    {% for l in lanmu %}
+		<li><a href="/category/{{ l.id }}">{{ l.name }}<span class="color">(5)</span></a></li>
+	{% endfor %}
+{% endblock %}
+
+<!--位置条-->
+{% block weizhi %}
+    {% for title in lanmutitle %}
+            / <a href="/category/{{ title.id }}">{{ title.name }}</a>
+    {% endfor %}
+	<!--/ <a href="#">Page</a> / <a href="#">Sub Page</a>-->
+{% endblock%}
+
+<!--内容-->
+{% block context %}
+	{% autopaginate lists 2 %}
+            {% if lists %}
+                {% for cont in lists %}
+								<div class="blog-one-item">
+
+									<!-- blog One Img -->
+									<div class="blog-one-img">
+										<!-- Image -->
+										<a href="/Article/{{ cont.id }}"><img src="/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+									</div>
+									<!-- blog One Content -->
+									<div class="blog-one-content">
+										<!-- Heading -->
+										<h3><a href="/Article/{{ cont.id }}">{{ cont.title }}</a></h3>
+										<!-- Blog meta -->
+										<div class="blog-meta">
+											<!-- Date -->
+											<i class="fa fa-calendar"></i> &nbsp;{{cont.date}} &nbsp; 
+											<!-- Author -->
+											<a href ='/list/{{ cont.author }}'><i class="fa fa-user"></i> &nbsp; {{cont.author}}</a> &nbsp;
+											<!-- Comments -->
+											<a href="#"><i class="fa fa-comments"></i> &nbsp; 等待折腾 Comments</a>
+										</div>
+										<!-- Paragraph -->
+										<p>{{ cont.context|safe|truncatechars:100}}</p>
+									</div>
+								</div>
+				{%endfor%}
+			{%endif%}
+	{% paginate %}
+{% endblock %}
+
+
+

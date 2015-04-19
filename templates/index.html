@@ -1,23 +1,33 @@
 {% extends 'base.html' %}
 {% load pagination_tags %}
 
-
+<!--网站标题-->
 {% block title %}
     {% for x in web %}
         {{ x.webtitle }}
     {% endfor %}
 {% endblock %}
 
+<!--banner 栏目-->
 {% block column %}
     {% for l in lanmu %}
         <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
     {% endfor %}
 {% endblock %}
 
+<!--侧边栏目-->
+{% block lanmus %}
+    {% for l in lanmu %}
+		<li><a href="/category/{{ l.id }}">{{ l.name }}<span class="color">(5)</span></a></li>
+	{% endfor %}
+{% endblock %}
+
+<!--位置条-->
 {% block weizhi %}
 	<!--/ <a href="#">Page</a> / <a href="#">Sub Page</a>-->
 {% endblock%}
 
+<!--内容-->
 {% block context %}
 	{% autopaginate contexts 2 %}
             {% if contexts %}

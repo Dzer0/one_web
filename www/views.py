@@ -54,7 +54,7 @@ def terms(req):
 def cate(req,cate_id):
     web = models.WebIntroduction.objects.all()
     lanmu = models.Column.objects.all()
-    list = models.Article.objects.filter(column__id=cate_id)
+    lists = models.Article.objects.filter(column__id=cate_id)
     lanmutitle =models.Column.objects.filter(id=cate_id)
     #cate_list =models.Article.objects.all()
     return render_to_response('list.html',locals(),context_instance=RequestContext(req))
@@ -66,8 +66,14 @@ def article(req,art_id):
 #    sessusername = req.session['username']
     web = models.WebIntroduction.objects.all()
     lanmu = models.Column.objects.all()
-    context = models.Article.objects.filter(id=art_id)
+
+    context = models.Article.objects.get(id=art_id)
+    wenzhanglanmu = context.column.all()
     comments = models.Comments.objects.filter(article_id=art_id)
+    num_comments = models.Comments.objects.filter(article_id=art_id).count()    #高效率的方法
+    #num_comments = len(comments)            #低效率的方法
+    print num_comments
+    print context,wenzhanglanmu
     if sessusername =='':
         m =loginUser()
     else:
@@ -202,7 +208,6 @@ def User_list1(req,user):
         return render_to_response('user.html',locals(),context_instance=RequestContext(req))
 
 #删除评论
-
 def del_comments(req,comments_id):
     sessusername = req.session['username']
     if sessusername =='':
