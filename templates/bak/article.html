@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+    {% block title %}
+        {% for x in web %}
+            {{ x.webtitle }}
+        {% endfor %}
+    {% endblock %}
+
+    {% block column %}
+        {% for l in lanmu %}
+            <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+        {% endfor %}
+    {% endblock %}
+
+    {% block context %}
+        {% if context %}
+            {% for cont in context %}
+                  <!--<h1 class="page-header">
+
+                {{cont.colum}}待解决
+
+                  </h1>
+-->
+                  <div class="row placeholders">
+                {{ cont.title }}<hr>
+                <a href ='/list/{{ cont.author }}'>{{ cont.author }}</a><hr>
+                {{ cont.context |safe }}<hr>
+                {{ cont.date }}<hr>
+
+                ============================================================
+                <p>
+                {% for com in comments %}
+                    {{ com.context }}|
+                    {{ com.date }}|{{ com.com_user }}<br>
+                {% endfor %}
+                <hr>
+                评论：
+                {% if sessusername %}
+                     <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/comment/{{ cont.id }}/">
+                        {% csrf_token %}
+                        {{ pl.context }}
+                     <input type="submit" value="提交评论" />
+                    </form>
+                {% else %}
+                    <form class="form-signin" _lpchecked="1" method="POST" enctype="multipart/form-data" action="/login/">
+                        {% csrf_token %}
+
+                          {{ m.username }}
+                          {{ m.password }}
+                     <input type="submit" value="登陆" />
+                    </form>
+
+                {% endif %}
+                </p>
+            {% endfor %}
+        {% endif %}
+         </div>
+    {% endblock %}

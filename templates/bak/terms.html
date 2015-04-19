@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+    {% block title %}
+        {% for x in web %}
+            {{ x.webtitle }}
+        {% endfor %}
+    {% endblock %}
+{% block column %}
+    {% for l in lanmu %}
+        <li><a href="/category/{{ l.id }}">{{ l.name }}</li>
+    {% endfor %}
+{% endblock %}
+    {% block context %}
+          {% if web %}
+              {% for m in web %}
+                  <h1 class="page-header">使用协议</h1>
+                  <div class="row placeholders">
+                    {{ m.Terms|safe }}
+                  </div>
+              {% endfor %}
+          {% endif %}
+    {% endblock %}

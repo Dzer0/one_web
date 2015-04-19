@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load pagination_tags %}
+
+
 {% block title %}
     {% for x in web %}
         {{ x.webtitle }}
@@ -11,13 +14,39 @@
     {% endfor %}
 {% endblock %}
 
+{% block weizhi %}
+	<!--/ <a href="#">Page</a> / <a href="#">Sub Page</a>-->
+{% endblock%}
+
 {% block context %}
-          {% if web %}
-              {% for m in web %}
-                  <h1 class="page-header"></h1>
-                  <div class="row placeholders">
-                    {{ m.Copyright|safe }}
-                  </div>
-              {% endfor %}
-          {% endif %}
+	{% autopaginate contexts 2 %}
+            {% if contexts %}
+                {% for cont in contexts %}
+								<div class="blog-one-item">
+
+									<!-- blog One Img -->
+									<div class="blog-one-img">
+										<!-- Image -->
+										<a href="/Article/{{ m.id }}"><img src="static/img/gallery/small/1.jpg" tppabs="http://ashobiz.asia/brave18/demo/static/img/gallery/small/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+									</div>
+									<!-- blog One Content -->
+									<div class="blog-one-content">
+										<!-- Heading -->
+										<h3><a href="/Article/{{ m.id }}">{{ cont.title }}</a></h3>
+										<!-- Blog meta -->
+										<div class="blog-meta">
+											<!-- Date -->
+											<i class="fa fa-calendar"></i> &nbsp;{{cont.date}} &nbsp; 
+											<!-- Author -->
+											<a href ='/list/{{ cont.author }}'><i class="fa fa-user"></i> &nbsp; {{cont.author}}</a> &nbsp;
+											<!-- Comments -->
+											<a href="#"><i class="fa fa-comments"></i> &nbsp; 6 Comments</a>
+										</div>
+										<!-- Paragraph -->
+										<p>{{ cont.context|safe|truncatechars:100}}</p>
+									</div>
+								</div>
+				{%endfor%}
+			{%endif%}
+	{% paginate %}
 {% endblock %}

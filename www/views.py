@@ -32,7 +32,9 @@ def index(req):
     try:
         web = models.WebIntroduction.objects.all()
         lanmu = models.Column.objects.all()
-        return render_to_response('index.html',locals())
+        #lists = models.Article.objects.all()  已无用 通过contexts截断输出
+        contexts = models.Article.objects.all()
+        return render_to_response('index.html',locals(),context_instance=RequestContext(req))
     except TemplateDoesNotExist:
         raise Http404()
 
